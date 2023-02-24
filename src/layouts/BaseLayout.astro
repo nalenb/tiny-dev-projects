@@ -1,0 +1,31 @@
+---
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+const { pageTitle } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta name='description' content='Bill Nalen - Tiny Dev Projects' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <title>{pageTitle}</title>
+    <link rel='icon' href='/favicon.ico' />
+    <script defer data-domain='tinydevprojects.com' src='https://plausible.io/js/script.js'
+    ></script>
+  </head>
+  <body>
+    <div class='bg-gray-100'>
+      <div class='mx-auto min-h-screen max-w-6xl bg-white'>
+        <Header />
+
+        <main class='px-16 pt-12'><slot /></main>
+
+        <Footer />
+      </div>
+    </div>
+  </body>
+</html>
